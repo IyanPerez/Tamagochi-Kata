@@ -2,29 +2,48 @@ package com.kata;
 
 public class Tamagotchi {
     
-    int mood = 4;
-    int hunger = 4;
-    int fullness = 4;
-    int energy = 4;
+    static int energy = 4;
+    static int hunger = 4;
+    static int mood = 4;
+
 
     
 
-    public Tamagotchi() {
-
-    }
+    public Tamagotchi() {}
 
 
 
     public void feeding(Tamagotchi tamagotchi){
-        if(tamagotchi.getFullness()<100){
-            tamagotchi.setHunger(tamagotchi.getHunger()+2);
-            tamagotchi.setFullness(tamagotchi.getFullness()-2);
+        if(tamagotchi.getHunger()<100){
+            tamagotchi.setHunger(tamagotchi.getHunger()-2);
         }
-        if(tamagotchi.getFullness()>=100){
-            System.out.println("El pou esta lleno");
+        if(tamagotchi.getHunger()>=100){
+            System.out.println("AVISO!!! ---> El pou esta lleno");
         }
     }
-
+    public void sleeping(Tamagotchi tamagotchi){
+        if(tamagotchi.getEnergy()<100){
+            tamagotchi.setEnergy(100);
+        }   else {
+            System.out.println("AVISO!!! ---> El pou no quiere dormir");
+        }
+    }
+    public void playing(Tamagotchi tamagotchi){
+        if(tamagotchi.getEnergy()<100){
+            tamagotchi.setEnergy(getEnergy()-2);
+            tamagotchi.setMood(getMood()+2);
+        }   else {
+            System.out.println("AVISO!!! ---> El pou no quiere jugar");
+        }
+    }
+    public void pooping(Tamagotchi tamagotchi){
+        if(tamagotchi.getHunger()<100){
+            tamagotchi.setHunger(getHunger()+2);
+        }   else {
+            System.out.println("AVISO!!! ---> El pou no quiere ir al baño");
+        }
+    }
+    
 
 
 
@@ -34,7 +53,7 @@ public class Tamagotchi {
     }
 
     public void setMood(int mood) {
-        this.mood = mood;
+        Tamagotchi.mood = mood;
     }
 
     public int getHunger() {
@@ -42,7 +61,7 @@ public class Tamagotchi {
     }
 
     public void setHunger(int hunger) {
-        this.hunger = hunger;
+        Tamagotchi.hunger = hunger;
     }
 
     public int getEnergy() {
@@ -50,15 +69,7 @@ public class Tamagotchi {
     }
 
     public void setEnergy(int energy) {
-        this.energy = energy;
-    }
-
-    public int getFullness() {
-        return fullness;
-    }
-
-    public void setFullness(int fullness) {
-        this.fullness = fullness;
+        Tamagotchi.energy = energy;
     }
 
 }
