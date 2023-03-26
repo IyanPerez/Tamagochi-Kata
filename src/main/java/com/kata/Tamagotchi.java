@@ -12,7 +12,7 @@ public class Tamagotchi {
 
     public Tamagotchi() {}
 
-
+ 
 
     public void feeding(Tamagotchi tamagotchi){
         if(tamagotchi.getHunger()<=10 && tamagotchi.getHunger()>0){
@@ -61,14 +61,15 @@ public class Tamagotchi {
     }
 
     
-    public void timeCounter(Tamagotchi tamagotchi){
+    public int timeCounter(Tamagotchi tamagotchi){
 
-        if(tamagotchi.getTime() >= 0 && tamagotchi.getTime() < 100){
-            System.out.println("El pou tiene"+tamagotchi.getTime()+"horas de vida");
+        if(tamagotchi.getTime() >= 0 && tamagotchi.getTime() < 60){
+            System.out.println("El pou tiene "+tamagotchi.getTime()+" horas de vida");
         }
-        if(tamagotchi.getTime() >= 100 ){
-            System.out.println("El pou tiene"+tamagotchi.getTime()+"horas de vida, por tanto ha muerto de viejo [F]");
+        if(tamagotchi.getTime() >= 60 ){
+            System.out.println("El pou tiene "+tamagotchi.getTime()+" horas, por tanto ha muerto de viejo [F]");
         }
+        return tamagotchi.getTime();
     }
 
 
@@ -91,6 +92,7 @@ public class Tamagotchi {
     public void setEnergy(int energy) {
         this.energy = energy;
     }
+    
 
 
 
