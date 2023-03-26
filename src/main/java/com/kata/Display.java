@@ -6,7 +6,7 @@ public class Display {
 
 
     public void energyFace(Tamagotchi tamagotchi){
-        if (tamagotchi.getEnergy()<3){
+        if (tamagotchi.getEnergy()<3 && tamagotchi.getEnergy()>0){
             System.out.println("Energy ==> (-_-)"); 
         }
         if (tamagotchi.getEnergy()==0){
